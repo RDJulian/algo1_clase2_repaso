@@ -11,8 +11,8 @@ En esta clase vamos a repasar y aplicar prácticamente los temas vistos hasta ah
 
 <ol>
 <li><h4>Algoritmo:</h4></li>
-Finito<br>
-Secuencial<br>
+Finito.<br>
+Secuencial.<br>
 "Una receta", se puede hacer con funciones.<br>
 Un conjunto de instrucciones ordenadas, precisas y finitas que sirven para resolver un problema.<br>
 <li><h4>Programación estructurada:</h4></li>
