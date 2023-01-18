@@ -53,6 +53,6 @@ Recuerden que el enésimo número de la secuencia de Fibonacci es:
 
 > f(n) = f(n - 1) + f(n - 2)
 </li>
-<li>Ejercicio 1 pág. 11 de la guía.</li>
-<li>Ejercicio 6 pág. 11 de la guía.</li>
+<li>(Ejercicio 1 pág. 11 de la guía) Escribir un programa, utilizando funciones, que descomponga un número en sus factores primos.</li>
+<li>(Ejercicio 6 pág. 11 de la guía) Hacer una función que devuelva el máximo común divisor y el mínimo común múltiplo entre dos enteros.</li>
 </ol>
