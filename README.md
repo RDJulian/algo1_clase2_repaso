@@ -1,8 +1,8 @@
 # Clase 2: Repaso
 <p align="center">
-  <img width="50%" height="50%" src="img/vergil_chair.jpg" alt="I am the storm that is approaching">
+  <img width="50%" height="50%" src="img/vergil_chair.jpg" alt="I am the storm that is approaching"><br>
+The calm before the storm.
 </p>
-<p style="text-align: center;">The calm before the storm.</p>
 
 En esta clase vamos a repasar y aplicar prácticamente los temas vistos hasta ahora.
 
@@ -28,7 +28,7 @@ En esta clase vamos a repasar y aplicar prácticamente los temas vistos hasta ah
 Escribir un programa que:
 <ol>
 <li>Ingrese un número cualquiera (puede ser float, puede ser negativo) e imprima por pantalla cuantos dígitos enteros tiene.</li>
-<li>Ingrese un número entero positivo y muestre por pantalla la sucesión de Collatz para ese número, junto con los pasos, de la forma:
+<li>Ingrese un número entero positivo y muestre por pantalla la sucesión de Collatz para ese número, junto con los pasos, de la forma:<br>
 
 > 1 - 8<br>
 > 2 - 4<br>
@@ -37,7 +37,7 @@ Escribir un programa que:
 
 Recuerden que si un número es par, se divide por 2. Si es impar, se hace la cuenta 3n + 1.
 </li>
-<li>Ingrese un número entero positivo n y muestre por pantalla la serie de Fibonacci hasta el enésimo numero de la forma:
+<li>Ingrese un número entero positivo n y muestre por pantalla la serie de Fibonacci hasta el enésimo numero de la forma:<br>
 
 > 1 - 0<br>
 > 2 - 1<br>
@@ -46,7 +46,7 @@ Recuerden que si un número es par, se divide por 2. Si es impar, se hace la cue
 > 5 - 3<br>
 > ...<br>
 
-Recuerden que el enésimo número de la secuencia de Fibonacci es:
+Recuerden que el enésimo número de la secuencia de Fibonacci es:<br>
 
 > f(n) = f(n - 1) + f(n - 2)
 </li>
