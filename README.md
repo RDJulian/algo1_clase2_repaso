@@ -1,4 +1,4 @@
-# Clase 2: Repaso
+# Clase 5: Repaso
 
 <p align="center">
   <img width="50%" height="50%" src="img/vergil_chair.jpg" alt="I am the storm that is approaching"><br>
