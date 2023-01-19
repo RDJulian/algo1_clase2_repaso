@@ -1,3 +1,4 @@
+# Validaciones
 def esEntero(numero: str):
     try:
         int(numero)
@@ -6,19 +7,23 @@ def esEntero(numero: str):
         return False
 
 
-def esPositivo(numero: str) -> bool:
-    return int(numero) >= 0
-
-
-def esNatural(numero: str) -> bool:
-    return esEntero(numero) and esPositivo(numero)
-
-
 def ingresarNumeroValido() -> int:
+    """Ver comentario del ejercicio 1."""
     numero = input("Ingrese un numero: ")
-    while not esNatural(numero):
+    while not esEntero(numero):
         numero = input("La entrada no es valida. Ingrese nuevamente: ")
     return int(numero)
+
+
+# Solucion al problema
+def modulo(numero: int) -> int:
+    """
+    Devuelve el valor verdadero. También se puede directamente filtrar los numeros negativos en ingresarNumeroValido().
+    """
+    if numero < 0:
+        return numero * (-1)
+    else:
+        return numero
 
 
 def esDivisible(dividendo: int, divisor: int) -> bool:
@@ -26,6 +31,11 @@ def esDivisible(dividendo: int, divisor: int) -> bool:
 
 
 def esNumeroPrimo(numero: int) -> bool:
+    """
+    Se asume que un número es primo hasta que se encuentra un divisor entre 1 y sí mismo.
+    En ese caso, se devuelve False.
+    Si no se encuentra ningun divisor, devuelve True.
+    """
     if numero == 0 or numero == 1:
         return False
     else:
@@ -37,7 +47,11 @@ def esNumeroPrimo(numero: int) -> bool:
         return esPrimo
 
 
-def buscarPrimerFactorPrimo(numero: int) -> int:
+def buscarFactorPrimo(numero: int) -> int:
+    """
+    Esta funcion solo busca el primer divisor primo del número ingresado y lo devuelve.
+    Se sabe de antemano que el número ingresado no es primo.
+    """
     factorPrimo = 2
     encontrado = False
     while not encontrado:
@@ -49,25 +63,36 @@ def buscarPrimerFactorPrimo(numero: int) -> int:
 
 
 def factorizarNumero(numero: int) -> tuple:
+    """
+    Esta funcion recibe un número y lo devuelve factorizado, junto con el divisor.
+    Si el número es primo, no es necesario ejecutar nada más, simplemente se devuelve 1 y sí mismo.
+    """
     if esNumeroPrimo(numero):
         return 1, numero
     else:
-        factorPrimo = buscarPrimerFactorPrimo(numero)
-        return int(numero / factorPrimo), factorPrimo
+        factorPrimo = buscarFactorPrimo(numero)
+        return numero // factorPrimo, factorPrimo
 
 
 def calcularMaximoComunDivisor(unNumero: int, otroNumero: int) -> int:
+    """
+    Para encontrar el MCD, se busca la interseccion entre los factores primos de ambos numeros.
+    La solucion planteada factoriza a uno de los numeros e intenta dividir al otro por el factor encontrado.
+    Si es divisor, entonces lo multiplica por el MCD actual.
+    """
     mcd = 1
+    unNumero = modulo(unNumero)
     while not unNumero == 1:
         unNumero, factorPrimo = factorizarNumero(unNumero)
         if esDivisible(otroNumero, factorPrimo):
             mcd = mcd * factorPrimo
-            otroNumero = int(otroNumero / factorPrimo)
+            otroNumero = otroNumero // factorPrimo
     return mcd
 
 
 def calcularMinimoComunMultiplo(unNumero: int, otroNumero: int, mcd: int) -> int:
-    return int(unNumero * otroNumero / mcd)
+    """El MCM se deriva del MCD de esta forma."""
+    return modulo(unNumero * otroNumero // mcd)
 
 
 def main() -> None:
