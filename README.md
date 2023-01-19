@@ -16,30 +16,30 @@ Secuencial.<br>
 "Una receta", se puede hacer con funciones.<br>
 Un conjunto de instrucciones ordenadas, precisas y finitas que sirven para resolver un problema.<br>
 <li><h4>Programación estructurada:</h4></li>
-Codigo modularizado.<br>
-Plantear el algoritmo/codigo/programa en funciones.<br>
+Código modularizado.<br>
+Plantear el algoritmo/código/programa en funciones.<br>
 <li><h4>Variables y tipos de dato:</h4></li>
 Entrada y guardado de datos.<br>
 Almacenar información.<br>
 "Una memoria nombrada".<br>
-int, float, string, bool. Clasificacion de datos.<br>
+int, float, string, bool. Clasificación de datos.<br>
 <li><h4>Estructuras secuenciales:</h4></li>
 "Los pasos a seguir".<br>
-Lineas que simplemente declaran una instrucción.<br>
+Líneas que simplemente declaran una instrucción.<br>
 <li><h4>Funciones:</h4></li>
 def para definir y declarar.<br>
 Tienen un nombre.<br>
-Tienen parametros (o no).<br>
+Tienen parámetros (o no).<br>
 Cumplen cierta tarea, una sola.<br>
 return para devolver un dato.<br>
-def main para la primera funcion del programa.<br>
+def main para la primera función del programa.<br>
 Hay que llamarlas.<br>
 <li><h4>Estructuras condicionales:</h4></li>
 if, else, elif para declarar condicionales.<br>
 Se usan booleanos para determinar el resultado.<br>
 Dependiendo de si es True o False, se ejecuta una u otra cosa.<br>
 <li><h4>Estructuras repetitivas:</h4></li>
-while, for, para hacer una tarea y repetirla n° cantidad de veces (las que sean necesarias).<br>
+while, for, para hacer una tarea y repetirla n cantidad de veces (las que sean necesarias).<br>
 </ol>
 
 # Ejercicios:
