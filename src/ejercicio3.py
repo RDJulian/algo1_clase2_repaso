@@ -24,30 +24,30 @@ def ingresarNumeroValido() -> int:
 
 
 # Solucion al problema
-def calcularEnesimoNumeroSerieFibonacci(n: int) -> int:
+def serieFibonacci(n: int) -> tuple:
     """
     NOTA: Aunque parece similar, este algoritmo no tiene nada que ver con el Bubblesort.
     El rango es de 2 a n porque queremos obtener los resultados anteriores hasta el n deseado.
     Comienza en 2 porque los resultados 0 y 1 ya son conocidos.
     """
-    if n == 0:
-        return 0
-    elif n == 1:
-        return 1
-    else:
-        nMenosDos = 0
-        nMenosUno = 1
-        for i in range(2, n):
-            auxiliar = nMenosUno
-            nMenosUno = nMenosUno + nMenosDos
-            nMenosDos = auxiliar
-        return nMenosUno + nMenosDos
+    nMenosDos = 0
+    nMenosUno = 1
+    for n in range(n + 1):
+        if n == 0:
+            yield n, 0
+        elif n == 1:
+            yield n, 1
+        else:
+            enesimo = nMenosUno + nMenosDos
+            nMenosDos = nMenosUno
+            nMenosUno = enesimo
+            yield n, enesimo
 
 
 def imprimirSerieFibonacci(n: int) -> None:
-    """Se imprime en el rango 0, n + 1 porque queremos imprimir el enesimo. Esto es equivalente a hacer 0, 1, ..., n."""
-    for i in range(n + 1):
-        print(f"{i} - {calcularEnesimoNumeroSerieFibonacci(i)}")
+    print(f"La serie de Fibonacci hasta el n = {n} es:")
+    for n, enesimo in serieFibonacci(n):
+        print(f"{n} - {enesimo}")
 
 
 def main() -> None:

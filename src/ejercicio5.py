@@ -30,48 +30,18 @@ def esDivisible(dividendo: int, divisor: int) -> bool:
     return dividendo % divisor == 0
 
 
-def esNumeroPrimo(numero: int) -> bool:
-    """
-    Se asume que un número es primo hasta que se encuentra un divisor entre 1 y sí mismo.
-    En ese caso, se devuelve False.
-    Si no se encuentra ningun divisor, devuelve True.
-    """
-    if numero == 0 or numero == 1:
-        return False
-    else:
-        divisor = 2
-        esPrimo = True
-        while esPrimo and divisor < numero:
-            esPrimo = not esDivisible(numero, divisor)
-            divisor += 1
-        return esPrimo
-
-
-def buscarFactorPrimo(numero: int) -> int:
-    """
-    Esta funcion solo busca el primer divisor primo del número ingresado y lo devuelve.
-    Se sabe de antemano que el número ingresado no es primo.
-    """
-    factorPrimo = 2
-    encontrado = False
-    while not encontrado:
-        if esDivisible(numero, factorPrimo) and esNumeroPrimo(factorPrimo):
-            encontrado = True
-        else:
-            factorPrimo += 1
-    return factorPrimo
-
-
 def factorizarNumero(numero: int) -> tuple:
     """
     Esta funcion recibe un número y lo devuelve factorizado, junto con el divisor.
     Si el número es primo, no es necesario ejecutar nada más, simplemente se devuelve 1 y sí mismo.
     """
-    if esNumeroPrimo(numero):
-        return 1, numero
-    else:
-        factorPrimo = buscarFactorPrimo(numero)
-        return numero // factorPrimo, factorPrimo
+    factor = 2
+    numero = modulo(numero)
+    while factor <= numero:
+        while esDivisible(numero, factor):
+            yield factor
+            numero = numero // factor
+        factor += 1
 
 
 def calcularMaximoComunDivisor(unNumero: int, otroNumero: int) -> int:
@@ -81,12 +51,10 @@ def calcularMaximoComunDivisor(unNumero: int, otroNumero: int) -> int:
     Si es divisor, entonces lo multiplica por el MCD actual.
     """
     mcd = 1
-    unNumero = modulo(unNumero)
-    while not unNumero == 1:
-        unNumero, factorPrimo = factorizarNumero(unNumero)
-        if esDivisible(otroNumero, factorPrimo):
-            mcd = mcd * factorPrimo
-            otroNumero = otroNumero // factorPrimo
+    for factor in factorizarNumero(unNumero):
+        if esDivisible(otroNumero, factor):
+            mcd = mcd * factor
+            otroNumero = otroNumero // factor
     return mcd
 
 
@@ -100,7 +68,7 @@ def main() -> None:
     otroNumero = ingresarNumeroValido()
     mcd = calcularMaximoComunDivisor(unNumero, otroNumero)
     mcm = calcularMinimoComunMultiplo(unNumero, otroNumero, mcd)
-    print(f"El MCD de los numeros {unNumero} y {otroNumero} es {mcd} y el MCM es {mcm}")
+    print(f"El MCD de los numeros {unNumero} y {otroNumero} es {mcd} y el MCM es {mcm}.")
 
 
 main()

@@ -35,14 +35,23 @@ def siguienteNumeroSucesionCollatz(numero: int) -> int:
         return numero * 3 + 1
 
 
-def imprimirSucesionCollatz(numero: int) -> None:
-    """La condicion de corte tiene que ser 1 porque si no, por la definicion de la sucesion, se entraria en un bucle."""
+def sucesionCollatz(numero: int) -> tuple:
+    """
+    La condicion de corte tiene que ser igual a 1 porque si no, por la definicion de la sucesion, se entraria en un
+    bucle.
+    """
     paso = 0
     while not numero == 1:
-        print(f"{paso} - {numero}")
+        yield paso, numero
         numero = siguienteNumeroSucesionCollatz(numero)
         paso += 1
-    print(f"{paso} - {numero}")
+    yield paso, numero
+
+
+def imprimirSucesionCollatz(numero: int) -> None:
+    print(f"La sucesion de Collatz comenzando desde el numero {numero} es:")
+    for paso, resultado in sucesionCollatz(numero):
+        print(f"{paso} - {resultado}")
 
 
 def main() -> None:
