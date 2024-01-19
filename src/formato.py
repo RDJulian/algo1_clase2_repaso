@@ -1,3 +1,9 @@
+"""
+Este archivo es un ejemplo de como usar strings con formato para imprimir mas facilmente.
+Quedó del año pasado, esto ya lo estuvimos usando este año (2024), asi que pueden pasar de largo.
+"""
+
+
 def main():
     uno = 1
     dos = 2

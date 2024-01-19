@@ -1,3 +1,31 @@
+"""
+Un ejemplo de como modularizar el código y hacer módulos permite la reutilización.
+Estas funciones las necesite en todos los ejercicios de este repo, por lo que fue
+conveniente moverlas a este archivo, para luego poder importarlas en las soluciones.
+
+Se pueden importar funciones de otro archivo de dos formas:
+    1. import modulo
+Esto va a importar TODAS las funciones de ese módulo. Si se importa de esta forma,
+luego se deben llamar a las funciones de la forma:
+    modulo.funcion()
+
+Por ejemplo:
+    import validaciones
+    validaciones.es_float()
+
+    2. from modulo import funcion1, funcion2, ...
+Esto va a importar solamente las funciones especificadas del módulo. De esta forma,
+se llaman directamente:
+    funcion()
+
+Por ejemplo:
+    from validaciones import es_float, es_entero
+    es_float()
+
+Ante la duda, releer el capítulo VI del apunte.
+"""
+
+
 def es_float(string: str) -> bool:
     """
     Esta función utiliza un try except para probar si un string es casteable a float,
